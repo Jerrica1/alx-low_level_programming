@@ -23,7 +23,7 @@ int main(void)
 				putchar(32);
 			}
 			i++;
-		} while (i <10);
+		} while (i < 10);
 	}
 	putchar('\n');
 	return (0);
