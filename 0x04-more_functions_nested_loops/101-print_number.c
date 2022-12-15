@@ -38,7 +38,7 @@ void print_number(int n)
 			print = print % 10;
 			_putchar('0' + print);
 		}
-		else if
+		else if (count > 1)
 		{
 			print = (new_num / 10) % 10;
 			_putchar('0' + print);
