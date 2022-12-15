@@ -40,7 +40,7 @@ void print_number(int n)
 		}
 		else if (count > 1)
 		{
-			print = (new_num / 10) % 10;
+			print = (new_num / _pow(10, count));
 			_putchar('0' + print);
 		}
 		else if (((new_num / 10) > 9) && count == 1)
