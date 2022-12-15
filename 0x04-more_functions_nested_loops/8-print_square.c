@@ -15,9 +15,9 @@ void print_square(int size)
 		return;
 	}
 
-	for (vert = size ; vert > 0 ; horiz--)
+	for (vert = size; vert > 0; horiz--)
 	{
-		for (horiz = size ; horiz > 0 ; horiz--)
+		for (horiz = size; horiz > 0; horiz--)
 		{
 			_putchar('#');
 		}
