@@ -25,7 +25,7 @@ char *rot13(char *s)
 		{
 			if (r1[rotation] == s[stringCount])
 			{
-				s[stringCount] = r2[stringCount];
+				s[stringCount] = r2[rotation];
 				break;
 			}
 		}
