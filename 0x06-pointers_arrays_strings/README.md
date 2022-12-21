@@ -1,1 +1,1 @@
-write a description of all the projects here
+this is a 2nd pointer, array and strings assignment
