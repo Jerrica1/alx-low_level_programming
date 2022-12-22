@@ -1,43 +1,34 @@
 #include "main.h"
-
 /**
- * rot13 - Encodes a string using rot13.
- * @str: The string to be encoded.
+ * rot13 - encodes strings using rot13.
+ * @s: pointer to string.
  *
- * Return: A pointer to the encoded string.
+ * Return: pointer to encoded string.
  */
-char *rot13(char *str)
+char *rot13(char *s)
 {
-	int indx1 = 0, indx2;
-	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-			     'G', 'H', 'I', 'J', 'K', 'L',
-			     'M'. 'N', 'O', 'P', 'Q', 'R',
-			     'S', 'T', 'U', 'V', 'W', 'X',
-			     'Y', 'Z', 'a', 'b', 'c', 'd',
-			     'e', 'f', 'g', 'h', 'i', 'j',
-			     'k', 'l', 'm', 'n', 'o', 'p',
-			     'q', 'r', 's', 't', 'u', 'v',
-			     'w', 'x', 'y', 'z'};
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
-			     'T', 'U', 'V', 'W', 'X', 'Y',
-			     'Z', 'A', 'B', 'C', 'D', 'E',
-			     'F', 'G', 'H', 'I', 'J', 'K',
-			     'L', 'M', 'n', 'o', 'p', 'q',
-			     'r', 's', 't', 'u', 'v', 'w',
-			     'x', 'y', 'z', 'a', 'b', 'c',
-			     'd', 'e', 'f', 'g', 'h', 'i',
-			     'j', 'k', 'l', 'm'};
-	while (str[indx1])
+	int stringCount, rotation;
+	char r1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		'Z'};
+	char r2[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		'M'};
+
+	for (stringCount = 0; s[stringCount] != '\0'; stringCount++)
 	{
-		for (indx2 = 0; indx2 < 52; indx2++)
+		for (rotation = 0; rotation < 53; rotation++)
 		{
-			if (str[indx1] == alphabet[indx2])
+			if (r1[rotation] == s[stringCount])
 			{
-				str[indx1] = rot13key[indx2];
+				s[stringCount] = r2[rotation];
 				break;
 			}
 		}
-		indx1++;
 	}
-	return (str);
+	return (s);
 }
