@@ -1,21 +1,28 @@
-#incude "main.h"
+/*
+ * File: 0-memset.c
+ * Auth: not
+ */
+
+#include "main.h"
 
 /**
- * _memset - fills memory with a constant byte n amount of times
+ * _memset - Fills the first n bytes of the memory area
+ * pointed to by @s with the constant byte @c.
+ * @s: A pointer to the memory area to be filled.
+ * @c: The character to fill the memory area with.
+ * @n: The number of bytes to be filled.
+ * description _memset: over there
  *
- * @s: pointer that has the address of the memory to fill
- * @b: constant byte that will be written into the memory
- * @n: amount of times the byte will be written into the memory
+ * Return: A pointer to the filled memory area @s.
  *
- * Return: address of the memory where thebyte was written
  */
-char *_memset(char *s, char b, unsigned int n)
+void *_memset(void *s, int c, size_t n)
 {
-	unsigned int i;
+	unsigned int index;
+	unsigned char *memory = s, value = c;
 
-	for (i = 0; i < n; i++)
-	{
-		s[i] = n;
-	}
-	return (s);
+	for (index = 0; index < n; index++)
+		memory[index] = value;
+
+	return (memory);
 }
