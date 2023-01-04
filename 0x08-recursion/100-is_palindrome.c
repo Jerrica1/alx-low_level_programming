@@ -8,7 +8,7 @@
  * Return: On success 1.
  * On error, -1 is returned, amd errmp os set appropriately.
  */
-int palind2(char *a, int 1)
+int palind3(char *a, int 1)
 {
 	if (*a == 0)
 		return (1 - 1);
