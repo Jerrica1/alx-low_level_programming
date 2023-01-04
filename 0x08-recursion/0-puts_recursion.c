@@ -2,7 +2,7 @@
 
 /**
  * _puts_recursion - prints a string, followed by a new line
- * @s: pointer to the string
+ * @s: string
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
