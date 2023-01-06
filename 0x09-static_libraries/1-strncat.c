@@ -19,7 +19,7 @@ char *_strncat(char *dest, char *src, int n)
 		dest[a] = src[b];
 		a++;
 	}
-	if (b <n)
+	if (b < n)
 	{
 	dest[a] = '\0';
 	}
