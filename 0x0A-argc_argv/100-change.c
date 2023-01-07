@@ -18,7 +18,7 @@ int coinConverter(int i)
 		if (i % 10 == 9 || i % 10 == 7)
 			i -= 2;
 		else if (i % 25 == 0)
-			i -= 2;
+			i -= 25;
 		else if (i % 10 == 0)
 			i -= 10;
 		else if (i % 5 == 0)
