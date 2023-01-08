@@ -1,24 +1,31 @@
 #include "main.h"
 
 /**
- * _strcat - This is the main copy
- * @dest: This is my dest
- * @src: This is my source
- *
- * Return: This return to the result
+ * *_strcat - function commute strings
+ * @dest: param pointer to a char
+ * @src: param pointer to a char
+ * Return: return value of dest
  */
 
 char *_strcat(char *dest, char *src)
 {
-	int a, b;
+	int i;
+	int j;
 
-	for (a = 0; dest[a] != '\0'; a++)
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
 	{
+		i++;
 	}
-	for (b = 0; src[b] != '\0'; b++)
+	while (src[j] != '\0')
 	{
-	dest[a] = src[b];
-	a++;
+		dest[i] = src[j];
+		j++;
+		i++;
 	}
+
+	dest[i] = '\0';
 	return (dest);
 }

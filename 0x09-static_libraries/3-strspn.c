@@ -1,31 +1,28 @@
 #include "main.h"
-/**
- * _strspn - This is y function
- * @s: This is the string literal
- * @accept: This is the second string
- *
- * Return: This is the equal string to S
- */
 
+/**
+ * _strspn - gets the length of a prefix substring.
+ * @s: initial segment.
+ * @accept: accepted bytes.
+ * Return: the number of accepted bytes.
+ */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int a, b, c;
+	unsigned int i, j, bool;
 
-	c = 0;
-	for (a = 0; s[a] != '\0'; a++)
+	for (i = 0; *(s + i) != '\0'; i++;
 	{
-		for (b = 0; accept[b] != '\0'; b++)
+		bool = 1;
+		for (j = 0; *(accept + j) != '\0'; j++;
 		{
-			if (accept[b] == s[a])
+			if (*(s + i) == *(accept + j))
 			{
-				c++;
+				bool = 0;
 				break;
 			}
 		}
-		if (accept[b] != s[a])
-		{
-		break;
-		}
+		if (bool == 1)
+			break;
 	}
-	return (c);
+	return (i);
 }
