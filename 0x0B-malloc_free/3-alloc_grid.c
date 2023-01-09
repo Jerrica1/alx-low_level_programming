@@ -1,40 +1,43 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * alloc_grid - function to return a pointer of a 2d array
+ * alloc_grid - returns a pointer to a 2 dimensional array of integers
+ * @width: width of the array
+ * @height: height of the array
  *
- * @width: width of the grid
- * @height: height of the grid
- *
- * Return: NULL for failure or 0/ neg height/ width
+ * Return: a pointer to a 2 dimensional array of integers
  */
-int *alloc_grid(int width, int height)
+int **alloc_grid(int width, int height)
 {
+	int a, b, **net;
 
-	int **matrix;
-	int a, b;
-
-	if (width < 1)
-		return (NULL);
-	if (height < 1)
-		return (NULL);
-	matrix = malloc(height * sizeof(int *));
-	if (matrix == 0)
-		return (NULL);
-	for (a = 0; a < height; a++)
+	if (width <= 0 || height <= 0)
 	{
-		matrix[a] = malloc(width * sizeof(int));
-		if (matrix[a] == 0)
+		return ('\0');
+	}
+
+	net = malloc(sizeof(int *) * height);
+
+	if (net == NULL)
+	{
+		return (NULL);
+	}
+	for (a = 0 ; a < height ; a++)
+	{
+		net[a] = malloc(sizeof(int) * width);
+		if (net[a] == NULL)
 		{
-			for (b = 0; b < a; b++)
-				free(matrix[b]);
-			free(matrix);
+			for (a = a - 1; a >= 0 ; a--)
+			{
+				free(net[a]);
+			}
+			free(net);
 			return (NULL);
 		}
-		for (b = 0; b < width; b++)
-			matrix[a][b] = 0;
+		for (b = 0 ; b < width ; b++)
+		{
+			net[a][b] = 0;
+		}
 	}
-	return (matrix);
+	return (net);
 }
