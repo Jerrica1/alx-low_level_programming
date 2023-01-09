@@ -10,7 +10,7 @@
  *
  * Return: NULL for failure or 0/ neg height/ width
  */
-int **alloc_grid(int width, int height)
+int *alloc_grid(int width, int height)
 {
 
 	int **matrix;
