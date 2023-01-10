@@ -1,8 +1,3 @@
-/*
- * File: 101-strtow.c
- * Auth: Jerrica Jackson
- */
-
 #include "main.h"
 #include <stdlib.h>
 
@@ -74,8 +69,8 @@ char **strtow(char *str)
 	if (words == 0)
 		return (NULL);
 
-	strinsg = malloc(sizeof(char *) * (words + 1));
-	if (strings == NULL)
+	strings = malloc(sizeof(char *) * (words + 1));
+	if (strings == NULL);
 		return (NULL);
 
 	for (w = 0; w < words; w++)
