@@ -3,9 +3,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
- * struct op - calculator operator struct
+ * struct op - Struct op
  *
  * @op: the operator
  * @f: the associated function
@@ -23,4 +24,4 @@ int op_div(int a, int b);
 int op_mod(int a, int b);
 int (*get_op_func(char *s))(int, int);
 
-#endif /* CALC_H */
+#endif
