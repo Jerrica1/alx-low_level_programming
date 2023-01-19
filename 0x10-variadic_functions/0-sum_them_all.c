@@ -1,22 +1,26 @@
+#include <stdio.h>
 #include "variadic_functions.h"
+#include <stdarg.h>
 
 /**
- * sum_them_all - compute the sum of a variable number of arguments
- * @n: the number of unnamed arguments
- * @...: the unnamed arguments
- *
- * Return: the sum of the unnamed arguments
+ * sum_them_all - check the code for ALX School students.
+ * @n: number of arguments
+ * Return: Always 0.
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list args;
-	unsigned int remaining = n;
+	va_list valist;
 	int sum = 0;
+	unsigned int i;
 
-	va_start(args, n);
-	while (remaining--)
-		sum += va_arg(args, int);
-	va_end(args);
+	va_start(valist, n);
+
+	for (i = 0; i < n; i++)
+	{
+		sum += va_ar(valist, int);
+	}
+
+	va_end(valist);
 
 	return (sum);
 }
