@@ -1,100 +1,96 @@
 #include <stdio.h>
-#include "variadic_functions.h"
 #include <stdarg.h>
+#include "variable_functions.h"
 
 /**
- * op_c - Print character
- * @form: name va_list
+ * printf_char - printfs a char from var args
  *
- * Return: Nothing.
+ * @list: va_list to print form
+ *
+ * Return: void
  */
-
-void op_c(va_list form)
+void printf_char(va_list list)
 {
-	printf("%c", va_arg(form, int));
+	printf("%c", (char) va_arg(list, int));
 }
-/**
- * op_i - Print Integer
- * @form: name va_list
- *
- * Return: Nothing.
- */
 
-void op_i(va_list form)
+/**
+ * printf_int - printfs an int from var args
+ *
+ * @list: va_list to print form
+ *
+ * Return: void
+ */
+void printf_int(va_list list)
 {
-	printf("%i", va_arg(form, int));
+	printf("%d", va_arg(list, int));
 }
-/**
- * op_f - print FLoat numbers
- * @form: name va_list
- *
- * Return: Nothing.
- */
 
-void op_f(va_list form)
+/**
+ * printf_float - printfs a float from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printf_float(va_list list)
 {
-	printf("%f", va_arg(form, double));
+	printf("%f", (float) va_arg(list, double));
 }
+
 /**
- * op_s -print string
- * @form: name va_list
+ * printf_string - printfs a string from var args
  *
- * Return: Nothing.
+ * @list: va_list to print from
+ *
+ * Return: void
  */
-
-void op_s(va_list form)
+void printf_string(va_list list)
 {
-	char *str;
+	char *str = va_arg(list, char*);
 
-	str = va_arg(form, char *);
-	if (str == NULL)
+	while (str != NULL)
 	{
-		printf("(nil)");
+		printf("%s", str);
 		return;
 	}
-	printf("%s", str);
+	printf("(nil)");
 }
 
-/**
- * print_all - check the code for ALX School students.
- * @format: number of arguments in character format
- *
- * Return: Nothing.
- */
 
+/**
+ * print_all - prints various types given a format string for the arguments
+ *
+ * @format: string containing type information for args
+ *
+ * Return: void
+ */
 void print_all(const char * const format, ...)
 {
+	const char *ptr;
+	va_list list;
+	funckey key[4] = { {printf_char, 'c'}, {printf_int, 'i'},
+		{printf_float, 'f'}, {printf_string, 's'} };
+	int keyind = 0, notfirst = 0;
 
-	va_list all;
-	unsigned int i, j;
-	char *separator = "";
-
-	f ops[] = {
-		{"c", op_c},
-		{"i", op_i},
-		{"f", op_f},
-		{"s", op_s},
-	};
-
-	va_start(all, format);
-	i = 0;
-	while (format && format[i])
+	ptr = format;
+	va_start(list, format);
+	while (format != NULL && *ptr)
 	{
-		j = 0;
-		while (j < 4)
+		if (key[keyind].spec == *ptr)
 		{
-			if (ops[j].op[0] == format[i])
-			{
-				printf("%s", separator);
-				separator = ", ";
-				ops[j].f(all);
-				break;
-			}
-			j++;
+			if (notfirst)
+				printf(",");
+			notfirst = 1;
+			key[keyind].f(list);
+			ptr++;
+			keyind = -1;
 		}
-		i++;
+		keyind++;
+		ptr += keyind / 4;
+		keyind %= 4;
 	}
-
 	printf("\n");
-	va_end(all);
+
+	va_end(list);
 }
