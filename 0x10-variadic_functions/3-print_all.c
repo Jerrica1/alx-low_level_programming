@@ -36,7 +36,7 @@ void op_f(va_list form)
 	printf("%f", va_arg(form, double));
 }
 /**
- * op_s - print string
+ * op_s -print string
  * @form: name va_list
  *
  * Return: Nothing.
