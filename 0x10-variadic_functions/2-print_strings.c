@@ -8,7 +8,7 @@
  * @n: how many args
  * Return: void
  */
-void print_strings(const char *separator, const unsigned int n, ...);
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 	/* declarations */
 	unsigned int i;
