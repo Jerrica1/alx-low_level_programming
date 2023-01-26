@@ -1,34 +1,34 @@
-# ALX School - 0x12-more_singly_linked_lists
+# 0x11. C - Singly linked lists
+---
+## Description
 
-## Description of Files
-<h6>lists.h</h6>
-Header file contains prototypes, and the main struct.
-<h6>0-print_listint.c</h6>
-Prints the elements of a linked list. Returns the number of nodes.
-<h6>1-listint_len.c</h6>
-Gets the number of nodes in a linked list.
-<h6>2-add_nodeint_end.c</h6>
-Adds a new node at the beginning.
-<h6>3-add_nodeint_end.c</h6>
-Adds a new node at the end of the list.
-<h6>4-free_listint.c</h6>
-Frees all nodes.
-<h6>5-free_listint2.c</h6>
-Frees all nodes and sets the head to NULL
-<h6>6-pop_listint.c</h6>
-Pops the head off of the list and returns its contents.
-<h6>7-get_nodeint.c</h6>
-Gets the value of a node at index n.
-<h6>8-sum_listint.c</h6>
-Returns a sum of all the daa in the list.
-<h6>9-insert_nodeint.c</h6>
-Inserts a node at a specified point
-<h6>10-delete_nodeint.c</h6>
-Deletes a node at a a specified point
-<h6>100-reverse_listint.c</h6>
+This project in the Low Level Programming series is about:
+* When and why using linked lists vs arrays
+* How to build and use linked lists
 
-<h6>101-print_listint_safe.c</h6>
+## Files
+---
+File|Task
+---|---
+lists.h | header file with function prototypes
+0-print_list.c | function that prints all the elements of a list_t list
+1-list_len.c | function that returns the number of elements in a linked list_t list
+2-add_node.c | function that adds a new node at the beginning of a list_t list
+3-add_node_end.c | function that adds a new node at the end of a list_t list
+4-free_list.c | function that frees a list_t list
 
-<h6>102-free_listint_safe.c</h6>
+## Directories
+---
+Directory Name | Description
+---|---
+/codingschool-low_level_programming/0x11-singly_linked_lists/ | main folder with all C files and a header file
 
-<h6>103-find_loop.c</h6>
+## How to compile
+gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
+
+## More Info
+All files is formatted Betty style and checked using betty-style.pl and betty-doc.pl
+
+
+## Author
+Jerrica Jackson
