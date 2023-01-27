@@ -7,11 +7,11 @@ section .data
 	global main
 
 main:
-	push rbp
+	push	 rbp
 	mov rsi, msg
 	mov rdi, fmt
 	mov rax, 0
-	call printf
+	call	 printf
 	pop rbp
 	mov rax, 0
 	ret
