@@ -1,4 +1,4 @@
-#include "listts.h"
+#include "lists.h"
 
 /**
  * free_listint - function with one argument
