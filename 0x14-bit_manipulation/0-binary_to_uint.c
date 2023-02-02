@@ -1,69 +1,32 @@
-#include "main.h"
-/**
- * _pow - function that return the
- * value of x raise to the power of y
- *
- * @x: parameter to base
- * @y: parameter of pow
- *
- * Return: End program
- */
-int _pow(int x, int y)
-{
-	if (y < 0)
-	{
-		return (-1);
-	}
-	else if (y == 0)
-	{
-		return (1);
-	}
-	else
-	{
-		y--;
-		x = x * _pow(x, y);
-		return (x);
-	}
+#include "alx.h"
+#include <stdio.h>
 
-	return (0);
-}
 /**
- * binary_to_uint - function that converts a binary number to an
- * unsigned int
+ * binary_to_uint - function that convert a binary number to an unsigned int
+ * @b: string to convert.
  *
- * @b: Pointer with the string whit the number to convert
- *
- * Return: The number converted
+ * Return: converted number or 0
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int sum = 0;
-	int i, x, n;
+	unsigned int num, i;
 
-	if (b == NULL)
-	{
+	if (!b || !*b)
 		return (0);
-	}
 
-	n = strlen(b) - 1;
-
-	/* Perform the Operation for the Sum */
-	for (x = 0, i = 0; n >= x; n--)
+	num = i = 0;
+	while (b[i])
 	{
-		switch (b[i])
+		if (b[i] > 49)
+			return (0);
+		else if (b[i] == 49)
 		{
-			case '1':
-				sum = sum + _pow(2, n);
-				i++;
-				break;
-			case '0':
-				sum = sum + 0;
-				i++;
-				break;
-			default:
-				return (0);
+			num <<= 1;
+			num += 1;
 		}
+		else
+			num <<= 1;
+		i++;
 	}
-
-	return (sum);
+	return (num);
 }
