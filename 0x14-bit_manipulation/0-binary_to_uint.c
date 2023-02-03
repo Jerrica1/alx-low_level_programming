@@ -1,4 +1,4 @@
-#include "msin.h"
+#include "main.h"
 
 /**
  * binary_to_uint - converts binary string to uint
@@ -8,10 +8,10 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int num;
+	unsigned int binary_to_uint(const char *b)
 
-	if (!b)
-		return (0);
+		if (!b)
+			return (0);
 
 	for (num = 0; *b; b++)
 	{
