@@ -7,7 +7,7 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int decimal = 0;
-	int multipilcador = 1, index = 0;
+	int multiplicador = 1, index = 0;
 
 	if (b == NULL)
 		return (0);
