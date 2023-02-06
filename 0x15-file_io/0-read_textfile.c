@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "alx.h"
 
 /**
  * read_textfile - that reads a text file and prints
@@ -33,7 +33,7 @@ size_t read_textfile(const char *filename, size_t letters)
 
 	let = read(file, text, letters);
 
-	w = write(STDOUT_FILEND, text, let);
+	w = write(STDOUT_FILENO, text, let);
 
 	close(file);
 
