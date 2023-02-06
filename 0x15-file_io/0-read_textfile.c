@@ -1,24 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "alx.h"
+#include "holberton.h"
 
 /**
- * read_textfile - that reads a text file and prints
- * @filename: variable pointer
- * @letters: size letters
- * Description: Write a function that reads a text file and prints it
- * to the POSIX standard output.
- * Return: the actual number of letters it could read and print, 0 otherwise
+ * read_textfile - Entry Point
+ * @filename: file name
+ * @letters: size
+ * Return: 0
  */
-
 size_t read_textfile(const char *filename, size_t letters)
 {
-	size_t file, let, w;
-	char *text;
-
-	text = malloc(letters);
-	if (text == NULL)
-		return (0);
+	int file, rd, wr;
+	char *buf;
 
 	if (filename == NULL)
 		return (0);
@@ -26,16 +17,23 @@ size_t read_textfile(const char *filename, size_t letters)
 	file = open(filename, O_RDONLY);
 
 	if (file == -1)
-	{
-		free(text);
 		return (0);
-	}
 
-	let = read(file, text, letters);
+	buf = malloc(sizeof(char) * letters + 1);
+	if (buf == NULL)
+		return (0);
 
-	w = write(STDOUT_FILENO, text, let);
+	rd = read(file, buf, letters);
+	if (rd == -1)
+		return (0);
+
+	buf[letters] = '\0';
+
+	wr = write(1, buf, rd);
+	if (wr == -1)
+		return (0);
 
 	close(file);
-
-	return (w);
+	free(buf);
+	return (wr);
 }
