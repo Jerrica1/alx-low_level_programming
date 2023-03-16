@@ -35,7 +35,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		aux_node = aux_node->next;
 	}
 
-	/* genereal case */
+	/* general case */
 	if (cont == idx && aux_node)
 	{
 		node_to_delete = aux_node->next;
