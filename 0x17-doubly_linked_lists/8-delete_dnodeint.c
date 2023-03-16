@@ -24,7 +24,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(node_to_delete);
 		if (*head)
 			(*head)->prev = NULL;
-		retun (1);
+		return (1);
 	}
 
 	/* search of position to delete */
