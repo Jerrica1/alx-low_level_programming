@@ -19,7 +19,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	char password[7], *codex;
 	int len = strlen(argv[1]), i, tmp;
 
-	codex = "A-CHRDw871NS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+	codex = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 
 	tmp = (len ^ 59) & 63;
 	password[0] = codex[tmp];
