@@ -5,23 +5,23 @@ int div(int i, int k);
 int mod(int i, int k);
 
 /**
- * add - adds two integers
- * @i: first integer to add
- * @k: second integer to add
- * Return: the sum
- */
+* add - adds two integers
+* @i: first integer to add
+* @k: second integer to add
+* Return: the sum
+*/
 
-int add(int i, int k);
+int add(int i, int k)
 {
 	return (i + k);
 }
 
 /**
- * sub - subtracts two integers
- * @i: first integer to add
- * @k: second integer to add
- * Return: the subtract
- */
+* sub - subtracts two integers
+* @i: first integer to add
+* @k: second integer to add
+* Return: the subtract
+*/
 
 int sub(int i, int k)
 {
@@ -29,23 +29,23 @@ int sub(int i, int k)
 }
 
 /**
- * mul - multiplies two integers
- * @i: first integer to add
- * @k: second integer to add
- * Return: the multiple
- */
+* mul - multiplies two integers
+* @i: first integer to add
+* @k: second integer to add
+* Return: the multiple
+*/
 
 int mul(int i, int k)
 {
-	return (i / k);
+	return (i * k);
 }
 
 /**
- * div - dividends two integers
- * @i: first integer to add
- * @k: second integer to add
- * Return: the dividend integer
- */
+* div - divideds two integers
+* @i: first integer to add
+* @k: second integer to add
+* Return: the dividend integer
+*/
 
 int div(int i, int k)
 {
@@ -53,11 +53,11 @@ int div(int i, int k)
 }
 
 /**
- * mod - finds the modulus of two integers
- * @i: first integer to add
- * @k: first integer to add
- * Return: the modulus
- */
+  mod - finds the modulus of two integers
+  @i: first integer to add
+  @k: second integer to add
+  Return: the modulus
+*/
 
 int mod(int i, int k)
 {
