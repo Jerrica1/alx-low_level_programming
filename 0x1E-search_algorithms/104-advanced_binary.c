@@ -1,4 +1,4 @@
-*
+/*
  * File: 104-advanced_binary.c
  * Auth: Jerrica Jackson
  */
